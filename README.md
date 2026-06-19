@@ -32,7 +32,7 @@ Generic AI assistants do not know those rules unless every developer repeats the
 Run this from the LeadRat Angular repository root.
 
 ```powershell
-npm i -g leadrat-ai
+npm i -g abidraza5594/Leadrat-Skills-For-Developer
 
 leadrat-ai.cmd init
 leadrat-ai.cmd learn
@@ -43,14 +43,6 @@ Short alias:
 
 ```powershell
 lr-ai.cmd update
-```
-
-One-time use without global install:
-
-```powershell
-npx leadrat-ai init
-npx leadrat-ai learn
-npx leadrat-ai doctor
 ```
 
 ## What Happens
@@ -233,46 +225,11 @@ The CLI is intentionally modular:
 | Validation | Checks missing docs, stale docs, config health, folder structure |
 | Future adapter | MCP server can reuse scanner and docs without refactoring |
 
-## Installation Patterns
-
-Global install from npm:
+## Installation
 
 ```powershell
-npm i -g leadrat-ai
+npm i -g abidraza5594/Leadrat-Skills-For-Developer
 leadrat-ai.cmd --help
-```
-
-Publish/update the public npm package:
-
-```powershell
-npm login
-npm publish
-```
-
-After publish, every developer can install with:
-
-```powershell
-npm i -g leadrat-ai
-```
-
-Install as a project dev dependency:
-
-```powershell
-npm i -D leadrat-ai
-npx leadrat-ai init
-npx leadrat-ai learn
-```
-
-One command per run:
-
-```powershell
-npx leadrat-ai update
-```
-
-CI validation:
-
-```powershell
-npx leadrat-ai doctor --strict --json
 ```
 
 ## Typical Workflow
@@ -356,7 +313,7 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
 
 | Problem | Fix |
 | --- | --- |
-| `leadrat-ai` command not found | Run `npm i -g leadrat-ai` again |
+| `leadrat-ai` command not found | Run `npm i -g abidraza5594/Leadrat-Skills-For-Developer` again |
 | `AGENTS.md` missing in target repo | Restore `AGENTS.md` in the Angular repo root or a parent folder such as `C:\LeadRat CRM` |
 | Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
 | Want to inspect writes first | Add `--dry-run` |
