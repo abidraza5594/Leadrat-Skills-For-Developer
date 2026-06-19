@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import { AssistantError } from '../core/errors.js';
 export async function ensureAgentsFile(context) {
     if (!(await fs.pathExists(context.agentsPath))) {
-        throw new AssistantError('AGENTS.md is required and must remain the highest-priority instruction document.', 'AGENTS_MISSING');
+        throw new AssistantError('AGENTS.md is required in the Angular repository root or one of its parent folders. It must remain the highest-priority instruction document.', 'AGENTS_MISSING');
     }
     return fs.readFile(context.agentsPath, 'utf8');
 }

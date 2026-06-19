@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import { AssistantError } from './errors.js';
 export async function createContext(root) {
     const repoRoot = await findRepoRoot(path.resolve(root ?? process.cwd()));
+    const agentsPath = await findAgentsPath(repoRoot);
     const packageRoot = await findPackageRoot(path.dirname(fileURLToPath(import.meta.url)));
     return {
         repoRoot,
@@ -11,7 +12,7 @@ export async function createContext(root) {
         templatesRoot: path.join(packageRoot, 'templates'),
         seedDocsRoot: path.join(packageRoot, 'docs'),
         stateRoot: path.join(repoRoot, '.ai-dev-assistant', 'state'),
-        agentsPath: path.join(repoRoot, 'AGENTS.md'),
+        agentsPath,
     };
 }
 async function findPackageRoot(startPath) {
@@ -35,15 +36,28 @@ async function findPackageRoot(startPath) {
 async function findRepoRoot(startPath) {
     let current = startPath;
     while (true) {
-        const agentsPath = path.join(current, 'AGENTS.md');
         const packagePath = path.join(current, 'package.json');
         const angularPath = path.join(current, 'angular.json');
-        if ((await fs.pathExists(agentsPath)) && (await fs.pathExists(packagePath)) && (await fs.pathExists(angularPath))) {
+        if ((await fs.pathExists(packagePath)) && (await fs.pathExists(angularPath))) {
             return current;
         }
         const parent = path.dirname(current);
         if (parent === current) {
-            throw new AssistantError('Could not find a LeadRat Angular repository. Run this command inside a repository that contains AGENTS.md, package.json, and angular.json.', 'REPO_ROOT_NOT_FOUND');
+            throw new AssistantError('Could not find a LeadRat Angular repository. Run this command inside a repository that contains package.json and angular.json.', 'REPO_ROOT_NOT_FOUND');
+        }
+        current = parent;
+    }
+}
+async function findAgentsPath(repoRoot) {
+    let current = repoRoot;
+    while (true) {
+        const agentsPath = path.join(current, 'AGENTS.md');
+        if (await fs.pathExists(agentsPath)) {
+            return agentsPath;
+        }
+        const parent = path.dirname(current);
+        if (parent === current) {
+            return path.join(repoRoot, 'AGENTS.md');
         }
         current = parent;
     }

@@ -32,25 +32,25 @@ Generic AI assistants do not know those rules unless every developer repeats the
 Run this from the LeadRat Angular repository root.
 
 ```powershell
-npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
+npm install -g https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz
 
-leadrat-ai init
-leadrat-ai learn
-leadrat-ai doctor
+leadrat-ai.cmd init
+leadrat-ai.cmd learn
+leadrat-ai.cmd doctor
 ```
 
 Short alias:
 
 ```powershell
-lr-ai update
+lr-ai.cmd update
 ```
 
 One-time use without global install:
 
 ```powershell
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai learn
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor
+npx --yes --package https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz leadrat-ai init
+npx --yes --package https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz leadrat-ai learn
+npx --yes --package https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz leadrat-ai doctor
 ```
 
 ## What Happens
@@ -177,6 +177,8 @@ The generated file is written under:
 
 Then ask your AI assistant to read that task file and implement it. Every generated assistant config tells the AI to treat Azure DevOps as the requirement source and Figma as visual reference while still following `AGENTS.md`.
 
+`AGENTS.md` can live in the Angular repository root or a parent folder such as `C:\LeadRat CRM\AGENTS.md`.
+
 ## Agent Skill
 
 The package includes a first-class agent skill:
@@ -236,14 +238,14 @@ The CLI is intentionally modular:
 Global install from GitHub:
 
 ```powershell
-npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
-leadrat-ai --help
+npm install -g https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz
+leadrat-ai.cmd --help
 ```
 
 Install as a project dev dependency:
 
 ```powershell
-npm install --save-dev github:abidraza5594/Leadrat-Skills-For-Developer
+npm install --save-dev https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz
 npx leadrat-ai init
 npx leadrat-ai learn
 ```
@@ -251,13 +253,13 @@ npx leadrat-ai learn
 One command per run:
 
 ```powershell
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai update
+npx --yes --package https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz leadrat-ai update
 ```
 
 CI validation:
 
 ```powershell
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor --strict --json
+npx --yes --package https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz leadrat-ai doctor --strict --json
 ```
 
 ## Typical Workflow
@@ -341,8 +343,8 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
 
 | Problem | Fix |
 | --- | --- |
-| `leadrat-ai` command not found | Run `npm install -g github:abidraza5594/Leadrat-Skills-For-Developer` again |
-| `AGENTS.md` missing in target repo | Restore the repository's `AGENTS.md` before running `init` |
+| `leadrat-ai` command not found | Run `npm install -g https://github.com/abidraza5594/Leadrat-Skills-For-Developer/archive/refs/heads/main.tar.gz` again |
+| `AGENTS.md` missing in target repo | Restore `AGENTS.md` in the Angular repo root or a parent folder such as `C:\LeadRat CRM` |
 | Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
 | Want to inspect writes first | Add `--dry-run` |
 | Need private GitHub sync | Set `GITHUB_TOKEN`, then run `leadrat-ai sync --repo owner/repo` |

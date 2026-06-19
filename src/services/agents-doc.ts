@@ -5,7 +5,7 @@ import type { AssistantContext } from '../core/types.js';
 export async function ensureAgentsFile(context: AssistantContext): Promise<string> {
   if (!(await fs.pathExists(context.agentsPath))) {
     throw new AssistantError(
-      'AGENTS.md is required and must remain the highest-priority instruction document.',
+      'AGENTS.md is required in the Angular repository root or one of its parent folders. It must remain the highest-priority instruction document.',
       'AGENTS_MISSING'
     );
   }
