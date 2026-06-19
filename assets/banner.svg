@@ -1,0 +1,93 @@
+<svg width="1200" height="460" viewBox="0 0 1200 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LeadRat AI Developer Assistant banner</title>
+  <desc id="desc">A dark product banner showing LeadRat AI Developer Assistant, an Angular knowledge graph, and AI configuration outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070A16"/>
+      <stop offset="0.45" stop-color="#11192B"/>
+      <stop offset="1" stop-color="#062E35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="180" y1="52" x2="966" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36E4B8"/>
+      <stop offset="0.45" stop-color="#45A3FF"/>
+      <stop offset="1" stop-color="#A86BFF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121A2E"/>
+      <stop offset="1" stop-color="#0A1020"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.9 0 0 0 0 0.75 0 0 0 0.9 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .label { font: 600 18px Inter, Segoe UI, Arial, sans-serif; fill: #DBEAFE; }
+      .muted { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #94A3B8; }
+      .tiny { font: 600 12px Inter, Segoe UI, Arial, sans-serif; fill: #A7F3D0; letter-spacing: 0.08em; }
+      .mono { font: 600 18px Consolas, Monaco, monospace; fill: #D1FAE5; }
+      .title { font: 800 56px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
+      .subtitle { font: 500 24px Inter, Segoe UI, Arial, sans-serif; fill: #CBD5E1; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; transform-origin: center; }
+      .pulse2 { animation: pulse 3.4s ease-in-out infinite; transform-origin: center; }
+      .dash { stroke-dasharray: 10 16; animation: dash 16s linear infinite; }
+      .scan { animation: scan 4s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 0.58; } 50% { opacity: 1; } }
+      @keyframes dash { to { stroke-dashoffset: -240; } }
+      @keyframes scan { 0%, 100% { transform: translateY(0); opacity: 0.15; } 50% { transform: translateY(235px); opacity: 0.45; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="460" rx="28" fill="url(#bg)"/>
+  <circle cx="1008" cy="92" r="180" fill="#2DD4BF" opacity="0.07"/>
+  <circle cx="184" cy="386" r="210" fill="#60A5FA" opacity="0.08"/>
+  <path class="dash" d="M74 348C204 267 295 266 412 308C548 357 604 233 727 188C837 148 940 180 1090 91" stroke="url(#accent)" stroke-width="3" opacity="0.45"/>
+  <path d="M80 70H1120" stroke="#1E293B" stroke-width="1"/>
+  <path d="M80 392H1120" stroke="#1E293B" stroke-width="1"/>
+
+  <g transform="translate(86 88)">
+    <rect x="0" y="0" width="560" height="266" rx="18" fill="url(#panel)" stroke="#23304A"/>
+    <rect x="0" y="0" width="560" height="42" rx="18" fill="#0D1424"/>
+    <circle cx="26" cy="21" r="6" fill="#EF4444"/>
+    <circle cx="48" cy="21" r="6" fill="#F59E0B"/>
+    <circle cx="70" cy="21" r="6" fill="#22C55E"/>
+    <text x="24" y="86" class="tiny">LEADRAT AI CLI</text>
+    <text x="24" y="126" class="mono">npm install -g github:abidraza5594/</text>
+    <text x="24" y="158" class="mono">Leadrat-Skills-For-Developer</text>
+    <text x="24" y="207" class="mono" fill="#93C5FD">leadrat-ai init</text>
+    <text x="244" y="207" class="mono" fill="#5EEAD4">learn</text>
+    <text x="332" y="207" class="mono" fill="#C4B5FD">doctor</text>
+    <rect class="scan" x="16" y="54" width="528" height="8" rx="4" fill="url(#accent)"/>
+  </g>
+
+  <g transform="translate(690 74)">
+    <text x="0" y="52" class="title">LeadRat AI</text>
+    <text x="0" y="112" class="title">Developer Assistant</text>
+    <text x="4" y="154" class="subtitle">Angular CRM knowledge, generated docs,</text>
+    <text x="4" y="188" class="subtitle">and agent rules in one local CLI.</text>
+
+    <g transform="translate(4 228)">
+      <rect x="0" y="0" width="142" height="38" rx="19" fill="#0B1220" stroke="#2DD4BF"/>
+      <text x="24" y="25" class="label">AGENTS.md</text>
+      <rect x="158" y="0" width="128" height="38" rx="19" fill="#0B1220" stroke="#60A5FA"/>
+      <text x="184" y="25" class="label">Angular 14</text>
+      <rect x="302" y="0" width="106" height="38" rx="19" fill="#0B1220" stroke="#A78BFA"/>
+      <text x="326" y="25" class="label">NgRx</text>
+    </g>
+
+    <g transform="translate(40 308)">
+      <line x1="0" y1="0" x2="315" y2="0" stroke="url(#accent)" stroke-width="2" opacity="0.8"/>
+      <circle class="pulse" cx="0" cy="0" r="8" fill="#2DD4BF" filter="url(#glow)"/>
+      <circle class="pulse2" cx="106" cy="0" r="8" fill="#60A5FA" filter="url(#glow)"/>
+      <circle class="pulse" cx="212" cy="0" r="8" fill="#A78BFA" filter="url(#glow)"/>
+      <circle class="pulse2" cx="315" cy="0" r="8" fill="#34D399" filter="url(#glow)"/>
+      <text x="-28" y="38" class="muted">scan</text>
+      <text x="78" y="38" class="muted">docs</text>
+      <text x="178" y="38" class="muted">skills</text>
+      <text x="284" y="38" class="muted">MCP-ready</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LeadRat AI Developer Assistant architecture</title>
+  <desc id="desc">Architecture diagram showing CLI commands, scanner modules, documentation generation, template rendering, validation, and future MCP adapter.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06111F"/>
+      <stop offset="0.55" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#0C2230"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="80" y1="50" x2="1120" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="0.5" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#020617" flood-opacity="0.45"/>
+    </filter>
+    <style>
+      .h1 { font: 800 30px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
+      .h2 { font: 800 19px Inter, Segoe UI, Arial, sans-serif; fill: #E2E8F0; }
+      .body { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #94A3B8; }
+      .mono { font: 700 13px Consolas, Monaco, monospace; fill: #BAE6FD; }
+      .tag { font: 800 12px Inter, Segoe UI, Arial, sans-serif; fill: #08111F; }
+      .wire { stroke-dasharray: 10 12; animation: wire 12s linear infinite; }
+      .glow { animation: pulse 3.2s ease-in-out infinite; }
+      @keyframes wire { to { stroke-dashoffset: -200; } }
+      @keyframes pulse { 0%, 100% { opacity: 0.68; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="520" rx="26" fill="url(#bg)"/>
+  <text x="58" y="62" class="h1">LeadRat AI Developer Assistant Architecture</text>
+  <text x="58" y="92" class="body">Modular CLI today, reusable scanner and documentation engine for tomorrow's MCP server.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="58" y="128" width="210" height="288" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="84" y="168" class="h2">CLI Commands</text>
+    <text x="84" y="204" class="mono">init</text>
+    <text x="84" y="234" class="mono">learn</text>
+    <text x="84" y="264" class="mono">doctor</text>
+    <text x="84" y="294" class="mono">update</text>
+    <text x="84" y="324" class="mono">sync</text>
+    <text x="84" y="354" class="mono">clean</text>
+    <rect x="84" y="374" width="118" height="26" rx="13" fill="#2DD4BF"/>
+    <text x="104" y="392" class="tag">Commander</text>
+
+    <rect x="344" y="128" width="248" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="370" y="168" class="h2">Project Scanner</text>
+    <text x="370" y="200" class="body">Components, services, routes,</text>
+    <text x="370" y="222" class="body">NgRx, APIs, models, utils</text>
+    <rect x="370" y="232" width="98" height="26" rx="13" fill="#60A5FA"/>
+    <text x="390" y="250" class="tag">ts-morph</text>
+
+    <rect x="344" y="304" width="248" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="370" y="344" class="h2">File System Layer</text>
+    <text x="370" y="376" class="body">Managed markers, dry runs,</text>
+    <text x="370" y="398" class="body">custom edit preservation</text>
+    <rect x="370" y="408" width="86" height="26" rx="13" fill="#34D399"/>
+    <text x="392" y="426" class="tag">fs-extra</text>
+
+    <rect x="668" y="128" width="248" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="694" y="168" class="h2">Docs Generator</text>
+    <text x="694" y="200" class="body">PROJECT, ARCHITECTURE,</text>
+    <text x="694" y="222" class="body">COMPONENTS, STORE, API</text>
+    <rect x="694" y="232" width="106" height="26" rx="13" fill="#A78BFA"/>
+    <text x="716" y="250" class="tag">Markdown</text>
+
+    <rect x="668" y="304" width="248" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="694" y="344" class="h2">Template Renderer</text>
+    <text x="694" y="376" class="body">Claude, Cursor, Gemini,</text>
+    <text x="694" y="398" class="body">Copilot, Cline, Roo</text>
+    <rect x="694" y="408" width="96" height="26" rx="13" fill="#F59E0B"/>
+    <text x="718" y="426" class="tag">Configs</text>
+
+    <rect x="990" y="128" width="152" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="1016" y="168" class="h2">Doctor</text>
+    <text x="1016" y="200" class="body">Missing docs</text>
+    <text x="1016" y="222" class="body">Stale docs</text>
+    <text x="1016" y="244" class="body">Invalid config</text>
+
+    <rect x="990" y="304" width="152" height="132" rx="18" fill="#0E1728" stroke="#22304A"/>
+    <text x="1016" y="344" class="h2">Future MCP</text>
+    <text x="1016" y="376" class="body">Same scanner</text>
+    <text x="1016" y="398" class="body">Same docs</text>
+    <text x="1016" y="420" class="body">Server adapter</text>
+  </g>
+
+  <path class="wire" d="M268 210H344" stroke="url(#accent)" stroke-width="3"/>
+  <path class="wire" d="M268 344H344" stroke="url(#accent)" stroke-width="3"/>
+  <path class="wire" d="M592 194H668" stroke="url(#accent)" stroke-width="3"/>
+  <path class="wire" d="M592 370H668" stroke="url(#accent)" stroke-width="3"/>
+  <path class="wire" d="M916 194H990" stroke="url(#accent)" stroke-width="3"/>
+  <path class="wire" d="M916 370H990" stroke="url(#accent)" stroke-width="3"/>
+  <path d="M468 260V304" stroke="#334155" stroke-width="2"/>
+  <path d="M792 260V304" stroke="#334155" stroke-width="2"/>
+  <circle class="glow" cx="306" cy="210" r="7" fill="#2DD4BF"/>
+  <circle class="glow" cx="630" cy="194" r="7" fill="#60A5FA"/>
+  <circle class="glow" cx="954" cy="194" r="7" fill="#A78BFA"/>
+  <circle class="glow" cx="954" cy="370" r="7" fill="#34D399"/>
+
+  <text x="58" y="466" class="body">Every generated assistant config points back to AGENTS.md before project docs, so local LeadRat rules remain the source of truth.</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg width="1200" height="330" viewBox="0 0 1200 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LeadRat AI Developer Assistant workflow</title>
+  <desc id="desc">Workflow from AGENTS.md through Angular project scanning, generated documentation, AI configuration, and doctor validation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="1" stop-color="#081827"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="120" y1="165" x2="1080" y2="165" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="0.45" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#020617" flood-opacity="0.42"/>
+    </filter>
+    <style>
+      .title { font: 800 20px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
+      .body { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #94A3B8; }
+      .code { font: 700 13px Consolas, Monaco, monospace; fill: #A7F3D0; }
+      .step { font: 800 12px Inter, Segoe UI, Arial, sans-serif; fill: #07111F; }
+      .line { stroke-dasharray: 12 14; animation: flow 12s linear infinite; }
+      .node { animation: pulse 3s ease-in-out infinite; }
+      @keyframes flow { to { stroke-dashoffset: -220; } }
+      @keyframes pulse { 0%, 100% { opacity: 0.72; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="330" rx="24" fill="url(#bg)"/>
+  <path class="line" d="M144 164H1056" stroke="url(#stroke)" stroke-width="4" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(55 88)">
+      <rect width="188" height="154" rx="18" fill="#0E1728" stroke="#23304A"/>
+      <circle class="node" cx="42" cy="42" r="18" fill="#2DD4BF"/>
+      <text x="36" y="47" class="step">1</text>
+      <text x="26" y="88" class="title">AGENTS.md</text>
+      <text x="26" y="118" class="body">Highest-priority</text>
+      <text x="26" y="140" class="body">project rulebook</text>
+    </g>
+
+    <g transform="translate(294 88)">
+      <rect width="188" height="154" rx="18" fill="#0E1728" stroke="#23304A"/>
+      <circle class="node" cx="42" cy="42" r="18" fill="#60A5FA"/>
+      <text x="36" y="47" class="step">2</text>
+      <text x="26" y="88" class="title">Scan Angular</text>
+      <text x="26" y="118" class="body">Components, routes,</text>
+      <text x="26" y="140" class="body">services, store, APIs</text>
+    </g>
+
+    <g transform="translate(533 88)">
+      <rect width="188" height="154" rx="18" fill="#0E1728" stroke="#23304A"/>
+      <circle class="node" cx="42" cy="42" r="18" fill="#A78BFA"/>
+      <text x="36" y="47" class="step">3</text>
+      <text x="26" y="88" class="title">Generate Docs</text>
+      <text x="26" y="118" class="body">Managed markdown</text>
+      <text x="26" y="140" class="body">with custom sections</text>
+    </g>
+
+    <g transform="translate(772 88)">
+      <rect width="188" height="154" rx="18" fill="#0E1728" stroke="#23304A"/>
+      <circle class="node" cx="42" cy="42" r="18" fill="#34D399"/>
+      <text x="36" y="47" class="step">4</text>
+      <text x="26" y="88" class="title">Configure AI</text>
+      <text x="26" y="118" class="body">Claude, Cursor,</text>
+      <text x="26" y="140" class="body">Copilot, Roo, more</text>
+    </g>
+
+    <g transform="translate(1011 88)">
+      <rect width="134" height="154" rx="18" fill="#0E1728" stroke="#23304A"/>
+      <circle class="node" cx="42" cy="42" r="18" fill="#F59E0B"/>
+      <text x="36" y="47" class="step">5</text>
+      <text x="26" y="88" class="title">Doctor</text>
+      <text x="26" y="118" class="body">Validate and</text>
+      <text x="26" y="140" class="body">detect stale docs</text>
+    </g>
+  </g>
+
+  <text x="55" y="286" class="code">leadrat-ai init</text>
+  <text x="318" y="286" class="code">leadrat-ai learn</text>
+  <text x="566" y="286" class="code">managed docs</text>
+  <text x="796" y="286" class="code">AI configs</text>
+  <text x="1012" y="286" class="code">doctor --strict</text>
+</svg>

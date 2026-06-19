@@ -1,327 +1,301 @@
+![LeadRat AI Developer Assistant banner showing an Angular CRM knowledge graph flowing into AI configuration files](assets/banner.svg)
+
 # LeadRat AI Developer Assistant
 
-Production-ready internal AI onboarding toolkit for LeadRat Angular projects.
+**LeadRat AI Developer Assistant is a production-ready onboarding and code-generation safety layer for LeadRat Angular projects.** It installs assistant configs, scans the codebase, writes living documentation, and packages the full `AGENTS.md` rulebook into an agent skill so Claude, Cursor, Gemini, Copilot, Cline, Continue, Roo, Codex-style agents, and future MCP tools start with the same project knowledge.
 
-This package installs AI assistant configuration and generates project knowledge documents so Claude, Cursor, Gemini, Copilot, Cline, Continue, Roo, Codex-style agents, and future MCP-based tools can understand the LeadRat repository quickly and safely.
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6)](https://www.typescriptlang.org/)
+[![Node](https://img.shields.io/badge/Node-%3E%3D18.18-43853d)](https://nodejs.org/)
+[![Angular](https://img.shields.io/badge/Angular-14-dd0031)](https://angular.io/)
+[![CLI](https://img.shields.io/badge/CLI-Commander.js-111827)](https://github.com/tj/commander.js)
+[![AST](https://img.shields.io/badge/AST-ts--morph-6f42c1)](https://ts-morph.com/)
+[![Runtime Audit](https://img.shields.io/badge/runtime%20audit-0%20prod%20vulnerabilities-brightgreen)](#quality-gate)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Included-14b8a6)](skills/leadrat-angular-development/SKILL.md)
 
-## Simple Install
+> `AGENTS.md` in the target LeadRat repository is always the highest-priority instruction document. This assistant references it, teaches every supported AI tool to load it first, and never overwrites it.
 
-Run this once:
+## Why This Exists
 
-```bash
+LeadRat has real project rules: Angular module boundaries, shared services, reusable CSS, form validation components, NgRx patterns, API conventions, timezone helpers, confirmation popups, and strict "search before creating" expectations.
+
+Generic AI assistants do not know those rules unless every developer repeats them manually. This package turns those rules into a repeatable local onboarding system:
+
+- Install AI config files for the tools developers actually use.
+- Generate project knowledge from the current Angular source.
+- Preserve custom documentation edits between updates.
+- Keep `AGENTS.md` as the source of truth.
+- Expose the same rules as a reusable agent skill.
+- Prepare the architecture for a future MCP server without rewriting the scanner.
+
+## Two-Minute Setup
+
+Run this from the LeadRat Angular repository root.
+
+```powershell
 npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
-```
 
-Then use short commands from any LeadRat project root:
-
-```bash
 leadrat-ai init
 leadrat-ai learn
 leadrat-ai doctor
 ```
 
-Even shorter alias:
+Short alias:
 
-```bash
+```powershell
 lr-ai update
 ```
 
-## Simple One-Time Use
+One-time use without global install:
 
-Without global install:
-
-```bash
+```powershell
 npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
 npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai learn
 npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor
 ```
 
-## Simple Command List
+## What Happens
 
-```bash
-leadrat-ai init
-leadrat-ai learn
-leadrat-ai doctor
-leadrat-ai update
-leadrat-ai clean
-```
+![LeadRat AI Developer Assistant workflow from AGENTS.md to Angular scan, generated docs, AI configs, and doctor validation](assets/workflow.svg)
 
-## What This Installs
-
-The assistant installs or updates managed AI config files in a LeadRat repository:
-
-- `CLAUDE.md`
-- `CURSOR.md`
-- `GEMINI.md`
-- `.github/copilot-instructions.md`
-- `.cursor/rules/leadrat-ai.mdc`
-- `.clinerules`
-- `continue.config.json`
-- `roo.md`
-
-It also generates AI knowledge docs:
-
-- `PROJECT.md`
-- `ARCHITECTURE.md`
-- `COMMON_SERVICES.md`
-- `COMPONENTS.md`
-- `API_GUIDELINES.md`
-- `BUSINESS_RULES.md`
-- `STORE.md`
-- `MODELS.md`
-- `ROUTES.md`
-- `COMMON_UTILS.md`
-- `ERROR_HANDLING.md`
-- `CHECKLIST.md`
-
-## Highest Priority Rule
-
-`AGENTS.md` in the target LeadRat repository is always the source of truth.
-
-Every generated AI configuration tells assistants to read these files first, in this order:
-
-1. `AGENTS.md`
-2. `PROJECT.md`
-3. `ARCHITECTURE.md`
-4. `COMMON_SERVICES.md`
-5. `COMPONENTS.md`
-6. `API_GUIDELINES.md`
-
-If any generated document conflicts with `AGENTS.md`, `AGENTS.md` wins.
-
-## Install Directly From GitHub
-
-Run these commands from the LeadRat project root, not from this assistant repository.
-
-```bash
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
-```
-
-Then scan the Angular project and generate docs:
-
-```bash
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai learn
-```
-
-Validate installation:
-
-```bash
-npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor
-```
-
-## Install As A Dev Dependency
-
-Run from the LeadRat project root:
-
-```bash
-npm install --save-dev github:abidraza5594/Leadrat-Skills-For-Developer
-```
-
-Use the installed binary:
-
-```bash
-npx leadrat-ai init
-npx leadrat-ai learn
-npx leadrat-ai doctor
-```
-
-Short binary alias:
-
-```bash
-npx lr-ai update
-```
-
-## Step-By-Step Usage
-
-1. Open the LeadRat Angular repository.
-
-```bash
-cd "C:\LeadRat CRM\Clone 2\Leadrat-Black-Web"
-```
-
-2. Confirm `AGENTS.md` exists.
-
-```bash
-dir AGENTS.md
-```
-
-3. Install assistant configs.
-
-```bash
-leadrat-ai init
-```
-
-4. Learn the project.
-
-```bash
-leadrat-ai learn
-```
-
-5. Check health.
-
-```bash
-leadrat-ai doctor
-```
-
-6. After code changes, refresh generated docs while preserving custom notes.
-
-```bash
-leadrat-ai update
-```
-
-7. Remove generated AI files only when needed.
-
-```bash
-leadrat-ai clean
-```
-
-`clean` never removes `AGENTS.md`.
+1. `init` installs managed AI configuration files.
+2. `learn` scans the Angular project with TypeScript-aware analysis.
+3. Generated docs explain architecture, services, components, routes, store, models, utilities, APIs, and rules.
+4. AI tools are instructed to read `AGENTS.md` first, then project knowledge docs.
+5. `doctor` validates missing files, folder structure, and stale generated documentation.
 
 ## Commands
 
-### init
-
-Installs AI configuration files and seed docs.
-
-```bash
-npx leadrat-dev-assistant init
-```
+| Command | Use it for | Writes files |
+| --- | --- | --- |
+| `leadrat-ai init` | Install AI config files and seed knowledge docs | Yes |
+| `leadrat-ai learn` | Scan the Angular app and regenerate project docs | Yes |
+| `leadrat-ai doctor` | Validate docs, config, folder structure, and freshness | No |
+| `leadrat-ai update` | Refresh managed files while preserving custom notes | Yes |
+| `leadrat-ai sync` | Pull documentation from GitHub for team-wide updates | Yes |
+| `leadrat-ai clean` | Remove generated AI files only | Yes |
 
 Useful options:
 
-- `--yes` skips prompts.
-- `--force` overwrites managed assistant files.
-- `--dry-run` shows intended changes without writing files.
-- `--root <path>` runs against a specific repository root.
-
-### learn
-
-Scans the Angular project using TypeScript AST analysis and generates docs.
-
-```bash
-npx leadrat-dev-assistant learn
+```powershell
+leadrat-ai init --yes
+leadrat-ai init --dry-run
+leadrat-ai learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-Web"
+leadrat-ai doctor --strict --json
+leadrat-ai sync --repo abidraza5594/Leadrat-Skills-For-Developer --ref main --path docs
 ```
 
-Detected items include:
+## Generated AI Config
 
-- Components
-- Services
-- Controllers
-- Models
-- Interfaces
-- Enums
-- Constants
-- Shared utilities
-- Pipes
-- Directives
-- Guards
-- Interceptors
-- NgRx store
-- Routes
-- API usages
+`init` creates or updates the assistant-facing configuration files below. Each file points back to `AGENTS.md` and the generated knowledge docs.
 
-### doctor
+| Tool | Generated file |
+| --- | --- |
+| Claude | `CLAUDE.md` |
+| Cursor | `CURSOR.md`, `.cursor/rules/leadrat-ai.mdc` |
+| Gemini | `GEMINI.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Cline | `.clinerules` |
+| Continue | `continue.config.json` |
+| Roo | `roo.md` |
 
-Validates the assistant setup.
+## Generated Knowledge Docs
 
-```bash
-npx leadrat-dev-assistant doctor
-```
+`learn` writes living documentation for the current repository. Generated sections are managed so `update` can refresh them while preserving custom notes outside managed blocks.
 
-Checks:
+| Document | Purpose |
+| --- | --- |
+| `PROJECT.md` | Project overview, stack, commands, and repository map |
+| `ARCHITECTURE.md` | Angular module structure, feature boundaries, shared layers |
+| `COMMON_SERVICES.md` | Shared services, controller services, reusable API wrappers |
+| `COMPONENTS.md` | Components, inputs, outputs, templates, selectors |
+| `API_GUIDELINES.md` | API service conventions and GET reuse guidance |
+| `BUSINESS_RULES.md` | Product rules discovered or documented for AI handoff |
+| `STORE.md` | NgRx actions, reducers, effects, selectors, state domains |
+| `MODELS.md` | Interfaces, classes, enums, constants, DTOs |
+| `ROUTES.md` | Lazy routes, feature routes, guards, path ownership |
+| `COMMON_UTILS.md` | Core helpers, date/time utilities, shared functions |
+| `ERROR_HANDLING.md` | Error handling, notifications, guards, interceptors |
+| `CHECKLIST.md` | Review checklist aligned with LeadRat rules |
 
-- Missing docs
-- Missing AI config
-- Missing `AGENTS.md`
-- Invalid `.ai-dev-assistant` folder structure
-- Outdated docs after source changes
+## Learn Scanner
 
-CI-friendly command:
+`learn` detects the pieces an AI assistant needs before touching code:
 
-```bash
-npx leadrat-dev-assistant doctor --strict --json
-```
-
-### update
-
-Refreshes generated docs and managed AI configs while preserving custom notes.
-
-```bash
-npx leadrat-dev-assistant update
-```
-
-### sync
-
-Syncs documentation from GitHub.
-
-```bash
-npx leadrat-dev-assistant sync --repo abidraza5594/Leadrat-Skills-For-Developer --ref main --path docs
-```
-
-For private repositories:
-
-```bash
-set GITHUB_TOKEN=your_token
-npx leadrat-dev-assistant sync --repo owner/private-repo
-```
-
-### clean
-
-Removes generated assistant files only.
-
-```bash
-npx leadrat-dev-assistant clean
-```
-
-Files are removed only when they contain the managed marker unless `--force` is used.
+| Area | Detection examples |
+| --- | --- |
+| Angular UI | Components, selectors, templates, styles, modules |
+| Forms | Reactive forms, validators, `form-errors-wrapper`, `ng-select` usage |
+| Services | Injectable services, controller services, shared HTTP helpers |
+| APIs | Endpoint wrappers, common service usage, request methods |
+| Store | NgRx actions, reducers, effects, selectors |
+| Core | Guards, interceptors, pipes, directives, utilities |
+| Types | Interfaces, enums, models, constants |
+| Routes | Lazy modules, feature routes, route ownership |
+| Quality rules | Duplicate service/API risk, missing docs, stale docs |
 
 ## Agent Skill
 
-This repository includes a reusable agent skill:
+The package includes a first-class agent skill:
 
 ```text
 skills/leadrat-angular-development/SKILL.md
 ```
 
-Use it for agents that support skill loading. The skill contains the detailed LeadRat development rules from `AGENTS.md`, including:
+Use this with AI tools that support local skills. It carries the important `AGENTS.md` behavior into assistant-native skill loading:
 
 - Read `AGENTS.md` first.
-- Search existing code before implementing.
-- Reuse existing CSS.
+- Search before implementing anything.
+- Reuse existing CSS and utility classes.
 - Never use inline CSS.
-- Use `form-errors-wrapper`.
-- Use `ng-select`.
+- Use `form-errors-wrapper` for editable form field validation.
+- Use `field-label-req` and `field-label` consistently.
+- Use `ng-select` for dropdowns and selectable options.
 - Reuse `getModuleListByAdvFilter()` for GET APIs whenever applicable.
-- Follow Angular and NgRx architecture.
-- Reuse common services and utilities.
-- Use timezone helpers for date/time.
-- Use existing confirmation popup patterns.
-- Prevent memory leaks.
-- Keep changes minimal.
+- Reuse existing services, controllers, utilities, constants, enums, and models.
+- Follow Angular 14 lazy module and NgRx conventions.
+- Use existing timezone helpers for date/time logic.
+- Use `UserConfirmationComponent` for destructive confirmations.
+- Prevent memory leaks with the repository subscription pattern.
+- Keep changes small, focused, and consistent with nearby files.
+
+## Safety Model
+
+This assistant is designed for a real production repository, not a demo folder.
+
+| Rule | Behavior |
+| --- | --- |
+| `AGENTS.md` is source of truth | Config files tell AI tools to load it first |
+| No overwrite of root `AGENTS.md` | The package references it and never replaces it |
+| Managed sections only | Generated docs can update without deleting custom notes |
+| Dry runs available | `--dry-run` previews writes before changing files |
+| Clean is scoped | `clean` removes generated AI files only |
+| Future MCP-ready | Scanner and documentation layers are reusable behind a server |
+
+## Architecture
+
+![LeadRat AI Developer Assistant architecture showing CLI commands, scanner services, template rendering, documentation writers, and future MCP adapter](assets/architecture.svg)
+
+The CLI is intentionally modular:
+
+| Layer | Responsibility |
+| --- | --- |
+| Commands | `init`, `learn`, `doctor`, `update`, `sync`, `clean` |
+| Project scanner | Finds Angular, TypeScript, route, store, API, and shared-code patterns |
+| Documentation generator | Converts scan output into managed markdown |
+| Template renderer | Installs AI configuration files with LeadRat-specific rules |
+| File system services | Preserve custom edits, detect managed files, support dry runs |
+| Validation | Checks missing docs, stale docs, config health, folder structure |
+| Future adapter | MCP server can reuse scanner and docs without refactoring |
+
+## Installation Patterns
+
+Global install from GitHub:
+
+```powershell
+npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
+leadrat-ai --help
+```
+
+Install as a project dev dependency:
+
+```powershell
+npm install --save-dev github:abidraza5594/Leadrat-Skills-For-Developer
+npx leadrat-ai init
+npx leadrat-ai learn
+```
+
+One command per run:
+
+```powershell
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai update
+```
+
+CI validation:
+
+```powershell
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor --strict --json
+```
+
+## Typical Workflow
+
+```powershell
+cd "C:\LeadRat CRM\Clone 2\Leadrat-Black-Web"
+
+leadrat-ai init
+leadrat-ai learn
+leadrat-ai doctor
+```
+
+After a feature or refactor:
+
+```powershell
+leadrat-ai update
+leadrat-ai doctor --strict
+```
+
+Before removing the generated assistant layer:
+
+```powershell
+leadrat-ai clean --dry-run
+leadrat-ai clean
+```
+
+`clean` never removes the target repository's `AGENTS.md`.
+
+## Quality Gate
+
+Local package checks:
+
+```powershell
+npm install
+npm run build
+npm test
+npm audit --omit=dev
+```
+
+Expected runtime audit result: zero production vulnerabilities.
 
 ## Local Development
 
-```bash
+```powershell
+cd .ai-dev-assistant
 npm install
 npm run build
 npm test
 ```
 
-Run the CLI locally:
+Run the CLI directly:
 
-```bash
+```powershell
 node bin/dev-assistant.cjs --help
-```
-
-Run against a LeadRat repo:
-
-```bash
 node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-Web"
 ```
 
-## Notes
+## Repository Layout
 
-- `AGENTS.md` is never overwritten.
-- Generated docs use managed sections.
-- Custom notes outside generated sections are preserved.
-- Runtime production audit is expected to be clean with `npm audit --omit=dev`.
+```text
+.ai-dev-assistant/
+  bin/
+  commands/
+  docs/
+  examples/
+  skills/
+  src/
+  templates/
+  tests/
+  assets/
+```
+
+## Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| `leadrat-ai` command not found | Run `npm install -g github:abidraza5594/Leadrat-Skills-For-Developer` again |
+| `AGENTS.md` missing in target repo | Restore the repository's `AGENTS.md` before running `init` |
+| Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
+| Want to inspect writes first | Add `--dry-run` |
+| Need private GitHub sync | Set `GITHUB_TOKEN`, then run `leadrat-ai sync --repo owner/repo` |
+
+## License And Ownership
+
+This package is built for LeadRat developer onboarding and AI-assisted engineering workflows. Keep project-specific rules in `AGENTS.md`; keep generated assistant knowledge refreshed with `leadrat-ai learn` and `leadrat-ai update`.
