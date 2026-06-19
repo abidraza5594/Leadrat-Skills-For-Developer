@@ -1,0 +1,13 @@
+import type { DocumentationFile, TemplateInstallTarget } from './types.js';
+export declare const ASSISTANT_NAME = "LeadRat AI Developer Assistant";
+export declare const STATE_VERSION = 1;
+export declare const STATE_FILE_NAME = "assistant-state.json";
+export declare const MANAGED_MARKER = "AI-DEV-ASSISTANT:MANAGED";
+export declare const GENERATED_START = "<!-- AI-DEV-ASSISTANT:START GENERATED -->";
+export declare const GENERATED_END = "<!-- AI-DEV-ASSISTANT:END GENERATED -->";
+export declare const REQUIRED_LOAD_ORDER: readonly ["AGENTS.md", "PROJECT.md", "ARCHITECTURE.md", "COMMON_SERVICES.md", "COMPONENTS.md", "API_GUIDELINES.md"];
+export declare const DOCUMENTATION_FILES: readonly DocumentationFile[];
+export declare const TEMPLATE_TARGETS: readonly TemplateInstallTarget[];
+export declare const SOURCE_SCAN_GLOBS: readonly ["src/app/**/*.ts", "src/styles/**/*.scss", "angular.json", "package.json", "tsconfig.json", "tsconfig.app.json"];
+export declare const TS_SCAN_GLOBS: readonly ["src/app/**/*.ts"];
+export declare const IGNORED_GLOBS: readonly ["**/node_modules/**", "**/dist/**", "**/.angular/**", "**/.git/**", "**/*.spec.ts"];
