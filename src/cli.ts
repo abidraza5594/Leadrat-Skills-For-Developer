@@ -4,6 +4,7 @@ import { doctorCommand } from './commands/doctor.js';
 import { initCommand } from './commands/init.js';
 import { learnCommand } from './commands/learn.js';
 import { syncCommand } from './commands/sync.js';
+import { taskCommand } from './commands/task.js';
 import { updateCommand } from './commands/update.js';
 import { toErrorMessage } from './core/errors.js';
 import { logger } from './core/logger.js';
@@ -56,6 +57,18 @@ program
   .option('-r, --root <path>', 'repository root')
   .option('--dry-run', 'fetch without writing files', false)
   .action(wrap(syncCommand));
+
+program
+  .command('task')
+  .description('Create an AI implementation brief from Azure DevOps and Figma')
+  .option('--azure <urlOrId>', 'Azure DevOps work item URL or numeric ID')
+  .option('--figma <url>', 'Figma file, design, or prototype URL')
+  .option('--azure-org <organization>', 'Azure DevOps organization; required when --azure is only a number')
+  .option('--azure-project <project>', 'Azure DevOps project name for context')
+  .option('--out <path>', 'output markdown path; defaults to .ai-dev-assistant/tasks/<task>.md')
+  .option('-r, --root <path>', 'repository root')
+  .option('--dry-run', 'fetch and render without writing a task file', false)
+  .action(wrap(taskCommand));
 
 program
   .command('clean')

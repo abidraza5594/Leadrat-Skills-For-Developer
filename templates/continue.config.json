@@ -26,6 +26,7 @@
     "Never use inline CSS.",
     "Reuse getModuleListByAdvFilter() whenever applicable.",
     "Follow the existing Angular and NgRx architecture.",
+    "If .ai-dev-assistant/tasks/*.md exists for the current request, read it after the required docs as the Azure DevOps/Figma task brief.",
     "Keep changes minimal."
   ],
   "contextProviders": [

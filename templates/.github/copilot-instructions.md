@@ -16,3 +16,4 @@ Project rules:
 - Reuse existing services and `getModuleListByAdvFilter()` for compatible GET APIs.
 - Follow existing Angular module, NgRx, folder, naming, and cleanup patterns.
 - Keep changes small and preserve existing worktree changes.
+- If `.ai-dev-assistant/tasks/*.md` exists for the current request, read it after the required docs and use it as the Azure DevOps/Figma task brief.

@@ -54,3 +54,11 @@ export interface GithubSyncOptions extends CommandOptions {
   readonly path?: string;
   readonly token?: string;
 }
+
+export interface TaskCommandOptions extends CommandOptions {
+  readonly azure?: string;
+  readonly figma?: string;
+  readonly azureOrg?: string;
+  readonly azureProject?: string;
+  readonly out?: string;
+}

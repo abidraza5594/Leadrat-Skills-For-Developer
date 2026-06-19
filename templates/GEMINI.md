@@ -16,3 +16,4 @@ When working in this repository:
 - Use existing confirmation popup patterns for destructive actions.
 - Use timezone utilities for date/time work.
 - Keep changes minimal and production-ready.
+- If `.ai-dev-assistant/tasks/*.md` exists for the current request, read it after the required docs and use it as the Azure DevOps/Figma task brief.

@@ -21,3 +21,9 @@ Mandatory behaviour:
 Generated knowledge documents:
 
 {{DOC_LIST}}
+
+Task briefs:
+
+- If `.ai-dev-assistant/tasks/*.md` exists for the current request, read the relevant task brief after the required documents above.
+- Treat Azure DevOps content as the requirement source and Figma content as visual reference.
+- Figma must be implemented using existing LeadRat UI classes and patterns, not inline styles.

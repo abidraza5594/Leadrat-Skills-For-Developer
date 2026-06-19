@@ -16,3 +16,4 @@ Cursor must:
 - Prefer `getModuleListByAdvFilter()` for supported GET APIs.
 - Keep changes scoped to the request.
 - Avoid destructive git or filesystem actions unless the user explicitly requests them.
+- If a matching `.ai-dev-assistant/tasks/*.md` file exists, read it after the required docs and use it as the Azure DevOps/Figma task brief.

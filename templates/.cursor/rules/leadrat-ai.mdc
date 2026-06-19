@@ -23,3 +23,4 @@ Rules:
 - Reuse `getModuleListByAdvFilter()` for GET APIs whenever applicable.
 - Follow existing Angular, NgRx, service, route, modal, and subscription patterns.
 - Preserve user changes and keep diffs focused.
+- If `.ai-dev-assistant/tasks/*.md` exists for the current request, read it after the required docs and use it as the Azure DevOps/Figma task brief.

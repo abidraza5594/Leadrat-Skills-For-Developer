@@ -13,3 +13,4 @@ Always search existing project patterns first.
 Reuse shared components, existing CSS utilities, existing modal/confirmation patterns, and `getModuleListByAdvFilter()` where applicable.
 Follow the existing Angular and NgRx architecture.
 Keep changes minimal and protect existing user work.
+If `.ai-dev-assistant/tasks/*.md` exists for the current request, read it after the required docs and use it as the Azure DevOps/Figma task brief.

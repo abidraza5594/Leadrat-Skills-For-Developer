@@ -31,6 +31,16 @@ Before writing code, planning code, reviewing code, or generating documentation,
 - Preserve user changes already present in the working tree.
 - Do not revert unrelated changes.
 
+## Azure DevOps And Figma Task Briefs
+
+When `.ai-dev-assistant/tasks/*.md` exists for the current request:
+
+- Read the relevant task brief after the mandatory load order.
+- Treat Azure DevOps content as the requirement source.
+- Treat Figma content as visual reference, not permission to invent a new design system.
+- Implement Figma UI with existing LeadRat CSS classes, shared components, form patterns, tables, modals, spacing, and typography.
+- Do not store Azure DevOps PATs or Figma tokens in files. Use environment variables only.
+
 ## Project Structure
 
 - Angular 14 application.

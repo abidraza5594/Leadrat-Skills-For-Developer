@@ -72,6 +72,7 @@ npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai 
 | `leadrat-ai doctor` | Validate docs, config, folder structure, and freshness | No |
 | `leadrat-ai update` | Refresh managed files while preserving custom notes | Yes |
 | `leadrat-ai sync` | Pull documentation from GitHub for team-wide updates | Yes |
+| `leadrat-ai task` | Build an AI implementation brief from Azure DevOps and Figma | Yes |
 | `leadrat-ai clean` | Remove generated AI files only | Yes |
 
 Useful options:
@@ -81,6 +82,7 @@ leadrat-ai init --yes
 leadrat-ai init --dry-run
 leadrat-ai learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-Web"
 leadrat-ai doctor --strict --json
+leadrat-ai task --azure 12345 --figma "https://www.figma.com/design/FILE_KEY/Page?node-id=1-2"
 leadrat-ai sync --repo abidraza5594/Leadrat-Skills-For-Developer --ref main --path docs
 ```
 
@@ -133,6 +135,40 @@ leadrat-ai sync --repo abidraza5594/Leadrat-Skills-For-Developer --ref main --pa
 | Routes | Lazy modules, feature routes, route ownership |
 | Quality rules | Duplicate service/API risk, missing docs, stale docs |
 
+## Azure DevOps And Figma Tasks
+
+`task` connects a work item and an optional design reference into one AI-ready implementation brief.
+
+Set credentials in the shell. Do not commit tokens or paste them into generated docs.
+
+```powershell
+$env:AZURE_DEVOPS_PAT="your-azure-devops-pat"
+$env:AZURE_DEVOPS_ORG="your-organization"
+$env:FIGMA_ACCESS_TOKEN="your-figma-token"
+```
+
+Create a task brief from a work item number:
+
+```powershell
+leadrat-ai task --azure 12345
+```
+
+Create a task brief from a work item URL and a Figma node:
+
+```powershell
+leadrat-ai task `
+  --azure "https://dev.azure.com/org/project/_workitems/edit/12345" `
+  --figma "https://www.figma.com/design/FILE_KEY/Page?node-id=1-2"
+```
+
+The generated file is written under:
+
+```text
+.ai-dev-assistant/tasks/
+```
+
+Then ask your AI assistant to read that task file and implement it. Every generated assistant config tells the AI to treat Azure DevOps as the requirement source and Figma as visual reference while still following `AGENTS.md`.
+
 ## Agent Skill
 
 The package includes a first-class agent skill:
@@ -179,7 +215,7 @@ The CLI is intentionally modular:
 
 | Layer | Responsibility |
 | --- | --- |
-| Commands | `init`, `learn`, `doctor`, `update`, `sync`, `clean` |
+| Commands | `init`, `learn`, `doctor`, `update`, `sync`, `task`, `clean` |
 | Project scanner | Finds Angular, TypeScript, route, store, API, and shared-code patterns |
 | Documentation generator | Converts scan output into managed markdown |
 | Template renderer | Installs AI configuration files with LeadRat-specific rules |
@@ -233,6 +269,12 @@ leadrat-ai update
 leadrat-ai doctor --strict
 ```
 
+For Azure DevOps and Figma work:
+
+```powershell
+leadrat-ai task --azure 12345 --figma "https://www.figma.com/design/FILE_KEY/Page?node-id=1-2"
+```
+
 Before removing the generated assistant layer:
 
 ```powershell
@@ -284,6 +326,7 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
   templates/
   tests/
   assets/
+  .ai-dev-assistant/tasks/
 ```
 
 ## Troubleshooting
@@ -295,6 +338,8 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
 | Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
 | Want to inspect writes first | Add `--dry-run` |
 | Need private GitHub sync | Set `GITHUB_TOKEN`, then run `leadrat-ai sync --repo owner/repo` |
+| Azure work item number fails | Set `AZURE_DEVOPS_ORG` or pass `--azure-org` |
+| Azure/Figma auth fails | Rotate the token if it was shared, then set `AZURE_DEVOPS_PAT` or `FIGMA_ACCESS_TOKEN` |
 
 ## License And Ownership
 
