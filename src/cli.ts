@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 import { cleanCommand } from './commands/clean.js';
 import { doctorCommand } from './commands/doctor.js';

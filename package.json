@@ -4,17 +4,17 @@
   "description": "LeadRat internal AI onboarding and developer-assistant CLI.",
   "type": "module",
   "bin": {
-    "leadrat-ai": "bin/dev-assistant.cjs",
-    "lr-ai": "bin/dev-assistant.cjs",
-    "leadrat-dev-assistant": "bin/dev-assistant.cjs",
-    "dev-assistant": "bin/dev-assistant.cjs"
+    "leadrat-ai": "dist/src/cli.js",
+    "lr-ai": "dist/src/cli.js",
+    "leadrat-dev-assistant": "dist/src/cli.js",
+    "dev-assistant": "dist/src/cli.js"
   },
   "exports": {
     ".": "./dist/src/index.js"
   },
   "files": [
     "bin",
-    "dist",
+    "dist/src",
     "templates",
     "docs",
     "skills",
