@@ -2,7 +2,7 @@
 # Models
 
 <!-- AI-DEV-ASSISTANT:START GENERATED -->
-Run `npx @leadrat/dev-assistant learn` to document interfaces, types, enums, constants, and shared models.
+Run `leadrat-ai.cmd learn` to document interfaces, types, enums, constants, and shared models.
 <!-- AI-DEV-ASSISTANT:END GENERATED -->
 
 ## Custom Notes

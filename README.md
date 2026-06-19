@@ -32,7 +32,7 @@ Generic AI assistants do not know those rules unless every developer repeats the
 Run this from the LeadRat Angular repository root.
 
 ```powershell
-npm i -g abidraza5594/Leadrat-Skills-For-Developer
+npm i -g abidraza5594/Leadrat-Skills-For-Developer --install-links=true
 
 leadrat-ai.cmd init
 leadrat-ai.cmd learn
@@ -228,7 +228,7 @@ The CLI is intentionally modular:
 ## Installation
 
 ```powershell
-npm i -g abidraza5594/Leadrat-Skills-For-Developer
+npm i -g abidraza5594/Leadrat-Skills-For-Developer --install-links=true
 leadrat-ai.cmd --help
 ```
 
@@ -313,7 +313,7 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
 
 | Problem | Fix |
 | --- | --- |
-| `leadrat-ai` command not found | Run `npm i -g abidraza5594/Leadrat-Skills-For-Developer` again |
+| `leadrat-ai` command not found | Run `npm i -g abidraza5594/Leadrat-Skills-For-Developer --install-links=true` again |
 | `AGENTS.md` missing in target repo | Restore `AGENTS.md` in the Angular repo root or a parent folder such as `C:\LeadRat CRM` |
 | Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
 | Want to inspect writes first | Add `--dry-run` |

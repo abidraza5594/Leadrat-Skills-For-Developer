@@ -2,7 +2,7 @@
 # API Guidelines
 
 <!-- AI-DEV-ASSISTANT:START GENERATED -->
-Run `npx @leadrat/dev-assistant learn` to document detected API usage and service patterns.
+Run `leadrat-ai.cmd learn` to document detected API usage and service patterns.
 <!-- AI-DEV-ASSISTANT:END GENERATED -->
 
 ## Custom Notes

@@ -2,7 +2,7 @@
 # Checklist
 
 <!-- AI-DEV-ASSISTANT:START GENERATED -->
-Run `npx @leadrat/dev-assistant learn` to generate implementation and review checklists from project rules.
+Run `leadrat-ai.cmd learn` to generate implementation and review checklists from project rules.
 <!-- AI-DEV-ASSISTANT:END GENERATED -->
 
 ## Custom Notes

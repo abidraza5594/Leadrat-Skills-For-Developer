@@ -2,7 +2,7 @@
 # NgRx Store
 
 <!-- AI-DEV-ASSISTANT:START GENERATED -->
-Run `npx @leadrat/dev-assistant learn` to document NgRx actions, reducers, effects, and store domains.
+Run `leadrat-ai.cmd learn` to document NgRx actions, reducers, effects, and store domains.
 <!-- AI-DEV-ASSISTANT:END GENERATED -->
 
 ## Custom Notes

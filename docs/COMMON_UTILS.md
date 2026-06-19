@@ -2,7 +2,7 @@
 # Common Utilities
 
 <!-- AI-DEV-ASSISTANT:START GENERATED -->
-Run `npx @leadrat/dev-assistant learn` to document shared utility functions and constants.
+Run `leadrat-ai.cmd learn` to document shared utility functions and constants.
 <!-- AI-DEV-ASSISTANT:END GENERATED -->
 
 ## Custom Notes

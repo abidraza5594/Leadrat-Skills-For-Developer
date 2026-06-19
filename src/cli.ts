@@ -13,7 +13,7 @@ import { logger } from './core/logger.js';
 const program = new Command();
 
 program
-  .name('@leadrat/dev-assistant')
+  .name('leadrat-ai')
   .description('LeadRat AI Developer Assistant CLI')
   .version('0.1.0');
 
