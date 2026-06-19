@@ -1,93 +1,120 @@
-<svg width="1200" height="460" viewBox="0 0 1200 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">LeadRat AI Developer Assistant banner</title>
-  <desc id="desc">A dark product banner showing LeadRat AI Developer Assistant, an Angular knowledge graph, and AI configuration outputs.</desc>
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LeadRat AI Developer Assistant</title>
+  <desc id="desc">Modern banner for the LeadRat AI Developer Assistant CLI with an AGENTS-first workflow, terminal commands, and AI onboarding outputs.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#070A16"/>
-      <stop offset="0.45" stop-color="#11192B"/>
-      <stop offset="1" stop-color="#062E35"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050814"/>
+      <stop offset="0.45" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#062F34"/>
     </linearGradient>
-    <linearGradient id="accent" x1="180" y1="52" x2="966" y2="410" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#36E4B8"/>
-      <stop offset="0.45" stop-color="#45A3FF"/>
-      <stop offset="1" stop-color="#A86BFF"/>
+    <linearGradient id="accent" x1="84" y1="78" x2="1088" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="0.48" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="260" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#121A2E"/>
-      <stop offset="1" stop-color="#0A1020"/>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101A2F"/>
+      <stop offset="1" stop-color="#080E1D"/>
     </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.9 0 0 0 0 0.75 0 0 0 0.9 0"/>
+    <radialGradient id="orbA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1004 92) rotate(90) scale(200)">
+      <stop stop-color="#2DD4BF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 420) rotate(90) scale(260)">
+      <stop stop-color="#60A5FA" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#020617" flood-opacity="0.48"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.20 0 0 0 0 0.90 0 0 0 0 0.78 0 0 0 0.8 0"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style>
-      .label { font: 600 18px Inter, Segoe UI, Arial, sans-serif; fill: #DBEAFE; }
-      .muted { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #94A3B8; }
-      .tiny { font: 600 12px Inter, Segoe UI, Arial, sans-serif; fill: #A7F3D0; letter-spacing: 0.08em; }
-      .mono { font: 600 18px Consolas, Monaco, monospace; fill: #D1FAE5; }
-      .title { font: 800 56px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
-      .subtitle { font: 500 24px Inter, Segoe UI, Arial, sans-serif; fill: #CBD5E1; }
-      .pulse { animation: pulse 2.8s ease-in-out infinite; transform-origin: center; }
-      .pulse2 { animation: pulse 3.4s ease-in-out infinite; transform-origin: center; }
-      .dash { stroke-dasharray: 10 16; animation: dash 16s linear infinite; }
-      .scan { animation: scan 4s ease-in-out infinite; }
-      @keyframes pulse { 0%, 100% { opacity: 0.58; } 50% { opacity: 1; } }
-      @keyframes dash { to { stroke-dashoffset: -240; } }
-      @keyframes scan { 0%, 100% { transform: translateY(0); opacity: 0.15; } 50% { transform: translateY(235px); opacity: 0.45; } }
+      .eyebrow { font: 800 13px Inter, Segoe UI, Arial, sans-serif; fill: #A7F3D0; letter-spacing: 0.12em; }
+      .title { font: 900 68px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
+      .subtitle { font: 600 23px Inter, Segoe UI, Arial, sans-serif; fill: #CBD5E1; }
+      .small { font: 600 15px Inter, Segoe UI, Arial, sans-serif; fill: #94A3B8; }
+      .label { font: 800 14px Inter, Segoe UI, Arial, sans-serif; fill: #E2E8F0; }
+      .pill { font: 800 15px Inter, Segoe UI, Arial, sans-serif; fill: #DFFCF4; }
+      .mono { font: 700 17px Consolas, Monaco, monospace; fill: #D1FAE5; }
+      .monoDim { font: 700 15px Consolas, Monaco, monospace; fill: #93C5FD; }
+      .dash { stroke-dasharray: 10 16; animation: dash 18s linear infinite; }
+      .scan { animation: scan 4.4s ease-in-out infinite; }
+      .pulse { animation: pulse 3s ease-in-out infinite; transform-origin: center; }
+      .pulse2 { animation: pulse 3.7s ease-in-out infinite; transform-origin: center; }
+      @keyframes dash { to { stroke-dashoffset: -260; } }
+      @keyframes scan { 0%, 100% { transform: translateY(0); opacity: 0.14; } 50% { transform: translateY(246px); opacity: 0.45; } }
+      @keyframes pulse { 0%, 100% { opacity: 0.62; } 50% { opacity: 1; } }
     </style>
   </defs>
 
-  <rect width="1200" height="460" rx="28" fill="url(#bg)"/>
-  <circle cx="1008" cy="92" r="180" fill="#2DD4BF" opacity="0.07"/>
-  <circle cx="184" cy="386" r="210" fill="#60A5FA" opacity="0.08"/>
-  <path class="dash" d="M74 348C204 267 295 266 412 308C548 357 604 233 727 188C837 148 940 180 1090 91" stroke="url(#accent)" stroke-width="3" opacity="0.45"/>
-  <path d="M80 70H1120" stroke="#1E293B" stroke-width="1"/>
-  <path d="M80 392H1120" stroke="#1E293B" stroke-width="1"/>
+  <rect width="1200" height="520" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="520" rx="30" fill="url(#orbA)"/>
+  <rect width="1200" height="520" rx="30" fill="url(#orbB)"/>
+  <path class="dash" d="M92 398C206 324 318 330 436 362C575 400 628 275 755 216C875 160 986 194 1100 106" stroke="url(#accent)" stroke-width="3" opacity="0.42"/>
+  <path d="M78 68H1122" stroke="#1E293B" stroke-width="1"/>
+  <path d="M78 452H1122" stroke="#1E293B" stroke-width="1"/>
 
-  <g transform="translate(86 88)">
-    <rect x="0" y="0" width="560" height="266" rx="18" fill="url(#panel)" stroke="#23304A"/>
-    <rect x="0" y="0" width="560" height="42" rx="18" fill="#0D1424"/>
-    <circle cx="26" cy="21" r="6" fill="#EF4444"/>
-    <circle cx="48" cy="21" r="6" fill="#F59E0B"/>
-    <circle cx="70" cy="21" r="6" fill="#22C55E"/>
-    <text x="24" y="86" class="tiny">LEADRAT AI CLI</text>
-    <text x="24" y="126" class="mono">npm install -g github:abidraza5594/</text>
-    <text x="24" y="158" class="mono">Leadrat-Skills-For-Developer</text>
-    <text x="24" y="207" class="mono" fill="#93C5FD">leadrat-ai init</text>
-    <text x="244" y="207" class="mono" fill="#5EEAD4">learn</text>
-    <text x="332" y="207" class="mono" fill="#C4B5FD">doctor</text>
-    <rect class="scan" x="16" y="54" width="528" height="8" rx="4" fill="url(#accent)"/>
+  <g transform="translate(82 88)">
+    <rect x="0" y="0" width="318" height="38" rx="19" fill="#07111F" stroke="#2DD4BF" opacity="0.95"/>
+    <text x="22" y="25" class="eyebrow">AGENTS-FIRST AI ONBOARDING</text>
+
+    <text x="0" y="98" class="title">LeadRat AI</text>
+    <text x="0" y="171" class="title">Developer</text>
+    <text x="0" y="244" class="title">Assistant</text>
+
+    <text x="4" y="292" class="subtitle">Angular CRM knowledge, generated docs,</text>
+    <text x="4" y="325" class="subtitle">and agent rules in one local CLI.</text>
+
+    <g transform="translate(4 360)">
+      <rect x="0" y="0" width="132" height="40" rx="20" fill="#07111F" stroke="#2DD4BF"/>
+      <text x="22" y="26" class="pill">AGENTS.md</text>
+      <rect x="150" y="0" width="124" height="40" rx="20" fill="#07111F" stroke="#60A5FA"/>
+      <text x="174" y="26" class="pill">Angular 14</text>
+      <rect x="292" y="0" width="94" height="40" rx="20" fill="#07111F" stroke="#A78BFA"/>
+      <text x="323" y="26" class="pill">NgRx</text>
+    </g>
   </g>
 
-  <g transform="translate(690 74)">
-    <text x="0" y="52" class="title">LeadRat AI</text>
-    <text x="0" y="112" class="title">Developer Assistant</text>
-    <text x="4" y="154" class="subtitle">Angular CRM knowledge, generated docs,</text>
-    <text x="4" y="188" class="subtitle">and agent rules in one local CLI.</text>
+  <g transform="translate(650 98)" filter="url(#shadow)">
+    <rect x="0" y="0" width="468" height="312" rx="24" fill="url(#card)" stroke="#263650"/>
+    <rect x="0" y="0" width="468" height="50" rx="24" fill="#0A1222"/>
+    <rect x="0" y="26" width="468" height="24" fill="#0A1222"/>
+    <circle cx="30" cy="25" r="7" fill="#EF4444"/>
+    <circle cx="54" cy="25" r="7" fill="#F59E0B"/>
+    <circle cx="78" cy="25" r="7" fill="#22C55E"/>
+    <text x="32" y="86" class="eyebrow">COPY, RUN, LEARN</text>
+    <text x="32" y="126" class="mono">npm install -g github:abidraza5594/</text>
+    <text x="32" y="158" class="mono">Leadrat-Skills-For-Developer</text>
+    <rect x="28" y="188" width="412" height="44" rx="12" fill="#07111F" stroke="#1F6F78"/>
+    <text x="46" y="216" class="monoDim">leadrat-ai init</text>
+    <text x="210" y="216" class="monoDim" fill="#5EEAD4">learn</text>
+    <text x="286" y="216" class="monoDim" fill="#C4B5FD">doctor</text>
+    <rect class="scan" x="20" y="60" width="428" height="7" rx="4" fill="url(#accent)"/>
 
-    <g transform="translate(4 228)">
-      <rect x="0" y="0" width="142" height="38" rx="19" fill="#0B1220" stroke="#2DD4BF"/>
-      <text x="24" y="25" class="label">AGENTS.md</text>
-      <rect x="158" y="0" width="128" height="38" rx="19" fill="#0B1220" stroke="#60A5FA"/>
-      <text x="184" y="25" class="label">Angular 14</text>
-      <rect x="302" y="0" width="106" height="38" rx="19" fill="#0B1220" stroke="#A78BFA"/>
-      <text x="326" y="25" class="label">NgRx</text>
+    <g transform="translate(44 270)">
+      <line x1="0" y1="0" x2="350" y2="0" stroke="url(#accent)" stroke-width="3" opacity="0.82"/>
+      <circle class="pulse" cx="0" cy="0" r="8" fill="#2DD4BF" filter="url(#softGlow)"/>
+      <circle class="pulse2" cx="116" cy="0" r="8" fill="#60A5FA" filter="url(#softGlow)"/>
+      <circle class="pulse" cx="232" cy="0" r="8" fill="#A78BFA" filter="url(#softGlow)"/>
+      <circle class="pulse2" cx="350" cy="0" r="8" fill="#34D399" filter="url(#softGlow)"/>
+      <text x="-14" y="28" class="small">scan</text>
+      <text x="94" y="28" class="small">docs</text>
+      <text x="204" y="28" class="small">skills</text>
+      <text x="316" y="28" class="small">MCP</text>
     </g>
+  </g>
 
-    <g transform="translate(40 308)">
-      <line x1="0" y1="0" x2="315" y2="0" stroke="url(#accent)" stroke-width="2" opacity="0.8"/>
-      <circle class="pulse" cx="0" cy="0" r="8" fill="#2DD4BF" filter="url(#glow)"/>
-      <circle class="pulse2" cx="106" cy="0" r="8" fill="#60A5FA" filter="url(#glow)"/>
-      <circle class="pulse" cx="212" cy="0" r="8" fill="#A78BFA" filter="url(#glow)"/>
-      <circle class="pulse2" cx="315" cy="0" r="8" fill="#34D399" filter="url(#glow)"/>
-      <text x="-28" y="38" class="muted">scan</text>
-      <text x="78" y="38" class="muted">docs</text>
-      <text x="178" y="38" class="muted">skills</text>
-      <text x="284" y="38" class="muted">MCP-ready</text>
-    </g>
+  <g transform="translate(724 436)">
+    <text x="0" y="0" class="label">Claude</text>
+    <text x="88" y="0" class="label">Cursor</text>
+    <text x="174" y="0" class="label">Copilot</text>
+    <text x="268" y="0" class="label">Gemini</text>
   </g>
 </svg>
