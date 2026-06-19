@@ -1,0 +1,48 @@
+{
+  "name": "@leadrat/dev-assistant",
+  "version": "0.1.0",
+  "description": "LeadRat internal AI onboarding and developer-assistant CLI.",
+  "type": "module",
+  "bin": {
+    "leadrat-dev-assistant": "bin/dev-assistant.cjs",
+    "dev-assistant": "bin/dev-assistant.cjs"
+  },
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "templates",
+    "docs",
+    "skills",
+    "commands",
+    "examples",
+    "AGENTS.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.5",
+    "inquirer": "^14.0.2",
+    "ora": "^8.1.0",
+    "ts-morph": "^23.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.15",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}

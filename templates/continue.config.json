@@ -1,0 +1,35 @@
+{
+  "name": "LeadRat AI Developer Assistant",
+  "version": "1.0.0",
+  "managedBy": "{{MANAGED_MARKER}}",
+  "docs": [
+    { "title": "AGENTS", "path": "AGENTS.md" },
+    { "title": "Project", "path": "PROJECT.md" },
+    { "title": "Architecture", "path": "ARCHITECTURE.md" },
+    { "title": "Common Services", "path": "COMMON_SERVICES.md" },
+    { "title": "Components", "path": "COMPONENTS.md" },
+    { "title": "API Guidelines", "path": "API_GUIDELINES.md" },
+    { "title": "Business Rules", "path": "BUSINESS_RULES.md" },
+    { "title": "Store", "path": "STORE.md" },
+    { "title": "Models", "path": "MODELS.md" },
+    { "title": "Routes", "path": "ROUTES.md" },
+    { "title": "Common Utils", "path": "COMMON_UTILS.md" },
+    { "title": "Error Handling", "path": "ERROR_HANDLING.md" },
+    { "title": "Checklist", "path": "CHECKLIST.md" }
+  ],
+  "rules": [
+    "AGENTS.md is the highest-priority instruction document.",
+    "Read AGENTS.md before generating code.",
+    "Search before creating any new implementation.",
+    "Never create duplicate services or APIs.",
+    "Reuse existing components, utilities, and CSS.",
+    "Never use inline CSS.",
+    "Reuse getModuleListByAdvFilter() whenever applicable.",
+    "Follow the existing Angular and NgRx architecture.",
+    "Keep changes minimal."
+  ],
+  "contextProviders": [
+    { "name": "codebase" },
+    { "name": "docs" }
+  ]
+}

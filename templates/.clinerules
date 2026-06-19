@@ -1,0 +1,15 @@
+<!-- {{MANAGED_MARKER}} -->
+# LeadRat Cline Rules
+
+Read these files before any implementation:
+
+{{LOAD_ORDER}}
+
+AGENTS.md is the highest-priority source of truth.
+
+Never create duplicate services, APIs, helpers, constants, models, enums, components, directives, or pipes.
+Never use inline CSS.
+Always search existing project patterns first.
+Reuse shared components, existing CSS utilities, existing modal/confirmation patterns, and `getModuleListByAdvFilter()` where applicable.
+Follow the existing Angular and NgRx architecture.
+Keep changes minimal and protect existing user work.

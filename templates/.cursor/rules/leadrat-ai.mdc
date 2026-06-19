@@ -1,0 +1,25 @@
+---
+description: LeadRat Angular repository rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+<!-- {{MANAGED_MARKER}} -->
+
+Load these files before coding:
+
+{{LOAD_ORDER}}
+
+AGENTS.md is authoritative.
+
+Rules:
+
+- Search before creating utilities, services, APIs, components, directives, pipes, constants, enums, models, or helpers.
+- Reuse existing code and existing CSS classes.
+- Never use inline CSS.
+- Use `form-errors-wrapper` and existing label classes for editable form fields.
+- Use `ng-select` for dropdowns.
+- Reuse `getModuleListByAdvFilter()` for GET APIs whenever applicable.
+- Follow existing Angular, NgRx, service, route, modal, and subscription patterns.
+- Preserve user changes and keep diffs focused.
