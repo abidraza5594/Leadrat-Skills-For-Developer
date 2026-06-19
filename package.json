@@ -4,6 +4,8 @@
   "description": "LeadRat internal AI onboarding and developer-assistant CLI.",
   "type": "module",
   "bin": {
+    "leadrat-ai": "bin/dev-assistant.cjs",
+    "lr-ai": "bin/dev-assistant.cjs",
     "leadrat-dev-assistant": "bin/dev-assistant.cjs",
     "dev-assistant": "bin/dev-assistant.cjs"
   },

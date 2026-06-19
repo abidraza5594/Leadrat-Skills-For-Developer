@@ -4,6 +4,48 @@ Production-ready internal AI onboarding toolkit for LeadRat Angular projects.
 
 This package installs AI assistant configuration and generates project knowledge documents so Claude, Cursor, Gemini, Copilot, Cline, Continue, Roo, Codex-style agents, and future MCP-based tools can understand the LeadRat repository quickly and safely.
 
+## Simple Install
+
+Run this once:
+
+```bash
+npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
+```
+
+Then use short commands from any LeadRat project root:
+
+```bash
+leadrat-ai init
+leadrat-ai learn
+leadrat-ai doctor
+```
+
+Even shorter alias:
+
+```bash
+lr-ai update
+```
+
+## Simple One-Time Use
+
+Without global install:
+
+```bash
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai learn
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor
+```
+
+## Simple Command List
+
+```bash
+leadrat-ai init
+leadrat-ai learn
+leadrat-ai doctor
+leadrat-ai update
+leadrat-ai clean
+```
+
 ## What This Installs
 
 The assistant installs or updates managed AI config files in a LeadRat repository:
@@ -52,19 +94,19 @@ If any generated document conflicts with `AGENTS.md`, `AGENTS.md` wins.
 Run these commands from the LeadRat project root, not from this assistant repository.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer init
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
 ```
 
 Then scan the Angular project and generate docs:
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer learn
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai learn
 ```
 
 Validate installation:
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer doctor
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai doctor
 ```
 
 ## Install As A Dev Dependency
@@ -78,15 +120,15 @@ npm install --save-dev github:abidraza5594/Leadrat-Skills-For-Developer
 Use the installed binary:
 
 ```bash
-npx leadrat-dev-assistant init
-npx leadrat-dev-assistant learn
-npx leadrat-dev-assistant doctor
+npx leadrat-ai init
+npx leadrat-ai learn
+npx leadrat-ai doctor
 ```
 
 Short binary alias:
 
 ```bash
-npx dev-assistant update
+npx lr-ai update
 ```
 
 ## Step-By-Step Usage
@@ -106,31 +148,31 @@ dir AGENTS.md
 3. Install assistant configs.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer init
+leadrat-ai init
 ```
 
 4. Learn the project.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer learn
+leadrat-ai learn
 ```
 
 5. Check health.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer doctor
+leadrat-ai doctor
 ```
 
 6. After code changes, refresh generated docs while preserving custom notes.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer update
+leadrat-ai update
 ```
 
 7. Remove generated AI files only when needed.
 
 ```bash
-npx --yes github:abidraza5594/Leadrat-Skills-For-Developer clean
+leadrat-ai clean
 ```
 
 `clean` never removes `AGENTS.md`.

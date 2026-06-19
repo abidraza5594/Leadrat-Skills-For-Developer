@@ -1,13 +1,20 @@
 # Basic Usage
 
 ```bash
-npx @leadrat/dev-assistant init
-npx @leadrat/dev-assistant learn
-npx @leadrat/dev-assistant doctor
+npm install -g github:abidraza5594/Leadrat-Skills-For-Developer
+leadrat-ai init
+leadrat-ai learn
+leadrat-ai doctor
 ```
 
 For CI validation:
 
 ```bash
-npx @leadrat/dev-assistant doctor --strict --json
+leadrat-ai doctor --strict --json
+```
+
+One-time use without global install:
+
+```bash
+npx --yes --package github:abidraza5594/Leadrat-Skills-For-Developer leadrat-ai init
 ```
