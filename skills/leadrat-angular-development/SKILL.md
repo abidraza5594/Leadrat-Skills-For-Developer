@@ -40,6 +40,7 @@ When `.ai-dev-assistant/tasks/*.md` exists for the current request:
 - Treat Figma content as visual reference, not permission to invent a new design system.
 - Implement Figma UI with existing LeadRat CSS classes, shared components, form patterns, tables, modals, spacing, and typography.
 - Do not store Azure DevOps PATs or Figma tokens in files. Use environment variables only.
+- Default Azure DevOps context is organization `gharoffice`, project `Leadrat-Black`, repository `Leadrat-Black-Web`.
 
 ## Project Structure
 

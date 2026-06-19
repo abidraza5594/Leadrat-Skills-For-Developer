@@ -139,11 +139,19 @@ leadrat-ai sync --repo abidraza5594/Leadrat-Skills-For-Developer --ref main --pa
 
 `task` connects a work item and an optional design reference into one AI-ready implementation brief.
 
+LeadRat office defaults are built in:
+
+| Setting | Default |
+| --- | --- |
+| Azure organization | `gharoffice` |
+| Azure project | `Leadrat-Black` |
+| Azure repository | `Leadrat-Black-Web` |
+| Pull requests | `https://dev.azure.com/gharoffice/Leadrat-Black/_git/Leadrat-Black-Web/pullrequests?_a=mine` |
+
 Set credentials in the shell. Do not commit tokens or paste them into generated docs.
 
 ```powershell
 $env:AZURE_DEVOPS_PAT="your-azure-devops-pat"
-$env:AZURE_DEVOPS_ORG="your-organization"
 $env:FIGMA_ACCESS_TOKEN="your-figma-token"
 ```
 
@@ -338,7 +346,7 @@ node bin/dev-assistant.cjs learn --root "C:\LeadRat CRM\Clone 2\Leadrat-Black-We
 | Docs look stale | Run `leadrat-ai learn`, then `leadrat-ai doctor --strict` |
 | Want to inspect writes first | Add `--dry-run` |
 | Need private GitHub sync | Set `GITHUB_TOKEN`, then run `leadrat-ai sync --repo owner/repo` |
-| Azure work item number fails | Set `AZURE_DEVOPS_ORG` or pass `--azure-org` |
+| Azure work item number uses wrong org | Pass `--azure-org` and `--azure-project` |
 | Azure/Figma auth fails | Rotate the token if it was shared, then set `AZURE_DEVOPS_PAT` or `FIGMA_ACCESS_TOKEN` |
 
 ## License And Ownership

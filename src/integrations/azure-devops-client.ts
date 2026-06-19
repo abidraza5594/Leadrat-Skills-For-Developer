@@ -10,6 +10,13 @@ import {
   valueToText,
 } from './integration-utils.js';
 
+export const LEADRAT_AZURE_DEVOPS_DEFAULTS = {
+  organization: 'gharoffice',
+  project: 'Leadrat-Black',
+  repository: 'Leadrat-Black-Web',
+  pullRequestsUrl: 'https://dev.azure.com/gharoffice/Leadrat-Black/_git/Leadrat-Black-Web/pullrequests?_a=mine',
+} as const;
+
 export interface AzureWorkItemReference {
   readonly id: number;
   readonly organization: string;
@@ -54,8 +61,8 @@ export class AzureDevOpsClient {
   async getWorkItem(referenceText: string, options: AzureWorkItemLookupOptions = {}): Promise<AzureWorkItem> {
     const reference = parseAzureWorkItemReference(
       referenceText,
-      options.organization ?? process.env.AZURE_DEVOPS_ORG,
-      options.project ?? process.env.AZURE_DEVOPS_PROJECT
+      options.organization ?? process.env.AZURE_DEVOPS_ORG ?? LEADRAT_AZURE_DEVOPS_DEFAULTS.organization,
+      options.project ?? process.env.AZURE_DEVOPS_PROJECT ?? LEADRAT_AZURE_DEVOPS_DEFAULTS.project
     );
 
     if (!this.token) {
@@ -94,8 +101,8 @@ export class AzureDevOpsClient {
 
 export function parseAzureWorkItemReference(
   input: string,
-  fallbackOrganization?: string,
-  fallbackProject?: string
+  fallbackOrganization: string = LEADRAT_AZURE_DEVOPS_DEFAULTS.organization,
+  fallbackProject: string = LEADRAT_AZURE_DEVOPS_DEFAULTS.project
 ): AzureWorkItemReference {
   const trimmed = input.trim();
 
@@ -106,10 +113,7 @@ export function parseAzureWorkItemReference(
   if (/^\d+$/.test(trimmed)) {
     const organization = fallbackOrganization?.trim();
     if (!organization) {
-      throw new AssistantError(
-        'Azure DevOps organization is required when using only a work item number. Pass --azure-org or set AZURE_DEVOPS_ORG.',
-        'AZURE_DEVOPS_ORG_REQUIRED'
-      );
+      throw new AssistantError('Azure DevOps organization is required when using only a work item number.', 'AZURE_DEVOPS_ORG_REQUIRED');
     }
 
     return {

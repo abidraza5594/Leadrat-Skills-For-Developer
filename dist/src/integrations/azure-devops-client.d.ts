@@ -1,3 +1,9 @@
+export declare const LEADRAT_AZURE_DEVOPS_DEFAULTS: {
+    readonly organization: "gharoffice";
+    readonly project: "Leadrat-Black";
+    readonly repository: "Leadrat-Black-Web";
+    readonly pullRequestsUrl: "https://dev.azure.com/gharoffice/Leadrat-Black/_git/Leadrat-Black-Web/pullrequests?_a=mine";
+};
 export interface AzureWorkItemReference {
     readonly id: number;
     readonly organization: string;

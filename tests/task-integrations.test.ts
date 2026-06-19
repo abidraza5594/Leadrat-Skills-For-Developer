@@ -22,6 +22,14 @@ describe('task integrations', () => {
     expect(reference.organization).toBe('leadrat');
   });
 
+  it('uses LeadRat Azure DevOps defaults for numeric work items', () => {
+    const reference = parseAzureWorkItemReference('16405');
+
+    expect(reference.id).toBe(16405);
+    expect(reference.organization).toBe('gharoffice');
+    expect(reference.project).toBe('Leadrat-Black');
+  });
+
   it('parses a Figma design URL with node ID', () => {
     const reference = parseFigmaReference('https://www.figma.com/design/AbCdEf/Page?node-id=10-20');
 

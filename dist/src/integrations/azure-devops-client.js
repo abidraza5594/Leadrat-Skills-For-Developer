@@ -1,13 +1,19 @@
 import { Buffer } from 'node:buffer';
 import { AssistantError } from '../core/errors.js';
 import { getArray, getNumber, getRecord, getString, isRecord, truncateText, valueToText, } from './integration-utils.js';
+export const LEADRAT_AZURE_DEVOPS_DEFAULTS = {
+    organization: 'gharoffice',
+    project: 'Leadrat-Black',
+    repository: 'Leadrat-Black-Web',
+    pullRequestsUrl: 'https://dev.azure.com/gharoffice/Leadrat-Black/_git/Leadrat-Black-Web/pullrequests?_a=mine',
+};
 export class AzureDevOpsClient {
     token;
     constructor(token = process.env.AZURE_DEVOPS_PAT) {
         this.token = token;
     }
     async getWorkItem(referenceText, options = {}) {
-        const reference = parseAzureWorkItemReference(referenceText, options.organization ?? process.env.AZURE_DEVOPS_ORG, options.project ?? process.env.AZURE_DEVOPS_PROJECT);
+        const reference = parseAzureWorkItemReference(referenceText, options.organization ?? process.env.AZURE_DEVOPS_ORG ?? LEADRAT_AZURE_DEVOPS_DEFAULTS.organization, options.project ?? process.env.AZURE_DEVOPS_PROJECT ?? LEADRAT_AZURE_DEVOPS_DEFAULTS.project);
         if (!this.token) {
             throw new AssistantError('Azure DevOps token missing. Set AZURE_DEVOPS_PAT in your shell before running this command.', 'AZURE_DEVOPS_TOKEN_MISSING');
         }
@@ -30,7 +36,7 @@ export class AzureDevOpsClient {
         return toAzureWorkItem(payload, reference);
     }
 }
-export function parseAzureWorkItemReference(input, fallbackOrganization, fallbackProject) {
+export function parseAzureWorkItemReference(input, fallbackOrganization = LEADRAT_AZURE_DEVOPS_DEFAULTS.organization, fallbackProject = LEADRAT_AZURE_DEVOPS_DEFAULTS.project) {
     const trimmed = input.trim();
     if (!trimmed) {
         throw new AssistantError('Azure DevOps work item reference is empty.', 'AZURE_DEVOPS_REFERENCE_EMPTY');
@@ -38,7 +44,7 @@ export function parseAzureWorkItemReference(input, fallbackOrganization, fallbac
     if (/^\d+$/.test(trimmed)) {
         const organization = fallbackOrganization?.trim();
         if (!organization) {
-            throw new AssistantError('Azure DevOps organization is required when using only a work item number. Pass --azure-org or set AZURE_DEVOPS_ORG.', 'AZURE_DEVOPS_ORG_REQUIRED');
+            throw new AssistantError('Azure DevOps organization is required when using only a work item number.', 'AZURE_DEVOPS_ORG_REQUIRED');
         }
         return {
             id: Number(trimmed),

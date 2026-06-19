@@ -8,9 +8,10 @@ Never commit credentials. Set them only in the local shell:
 
 ```powershell
 $env:AZURE_DEVOPS_PAT="your-azure-devops-pat"
-$env:AZURE_DEVOPS_ORG="your-organization"
 $env:FIGMA_ACCESS_TOKEN="your-figma-token"
 ```
+
+The default Azure DevOps context is `gharoffice/Leadrat-Black` with repository `Leadrat-Black-Web`.
 
 ## From A Work Item Number
 
