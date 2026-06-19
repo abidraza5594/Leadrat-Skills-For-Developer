@@ -1,5 +1,5 @@
 {
-  "name": "@leadrat/dev-assistant",
+  "name": "leadrat-ai",
   "version": "0.1.0",
   "description": "LeadRat internal AI onboarding and developer-assistant CLI.",
   "type": "module",
